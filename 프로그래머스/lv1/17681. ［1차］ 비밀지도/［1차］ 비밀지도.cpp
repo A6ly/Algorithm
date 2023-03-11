@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-#include <algorithm>
+#include <regex>
 
 using namespace std;
 
@@ -18,8 +18,8 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2)
             str += to_string((temp >> j) & 1);
         }
 
-        replace(str.begin(), str.end(), '1', '#');
-        replace(str.begin(), str.end(), '0', ' ');
+        str = regex_replace(str, regex("1"), "#");
+        str = regex_replace(str, regex("0"), " ");
 
         answer.push_back(str);
     }
