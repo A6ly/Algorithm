@@ -35,29 +35,32 @@ int main()
 
     for (int i = A; i <= B; i++)
     {
-        int temp = i;
-        int cnt = 0;
-
-        for (int j = 2; j <= i; j++)
+        if (!arr[i])
         {
-            if (temp == 1)
-            {
-                break;
-            }
+            int temp = i;
+            int cnt = 0;
 
-            if (arr[j])
+            for (int j = 2; j <= i; j++)
             {
-                while (temp % j == 0)
+                if (temp == 1)
                 {
-                    temp /= j;
-                    cnt++;
+                    break;
+                }
+
+                if (arr[j])
+                {
+                    while (temp % j == 0)
+                    {
+                        temp /= j;
+                        cnt++;
+                    }
                 }
             }
-        }
 
-        if (arr[cnt])
-        {
-            result++;
+            if (arr[cnt])
+            {
+                result++;
+            }
         }
     }
 
