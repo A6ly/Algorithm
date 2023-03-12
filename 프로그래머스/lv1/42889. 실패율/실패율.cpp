@@ -24,14 +24,6 @@ vector<int> solution(int N, vector<int> stages)
     for (int i = 1; i <= N; i++)
     {
         float cnt = count(stages.begin(), stages.end(), i);
-
-        if (cnt == 0)
-        {
-            failureRate.push_back({ 0, i });
-
-            continue;
-        }
-
         failureRate.push_back({ cnt / size, i });
         size -= cnt;
     }
