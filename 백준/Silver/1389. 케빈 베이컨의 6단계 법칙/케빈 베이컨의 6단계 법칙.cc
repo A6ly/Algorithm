@@ -32,7 +32,6 @@ void BFS(int start)
 				q.push(next);
 
 				arr[start][next] = arr[start][cur] + 1;
-				arr[next][start] = arr[cur][start] + 1;
 			}
 		}
 	}
