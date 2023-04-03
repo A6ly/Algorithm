@@ -16,7 +16,7 @@ int main()
 
 	while (T--)
 	{
-		int minVal = INT32_MAX, result = 0;
+		int minVal = 3995, result = 0;
 		vector<int> vec;
 		vector<vector<int>> vec2(MAX);
 
