@@ -46,12 +46,12 @@ int main()
 
 		for (int i = 1; i < MAX; i++)
 		{
-			int sum = 0;
-
 			if (vec2[i].empty())
 			{
 				continue;
 			}
+
+			int sum = 0;
 
 			for (int j = 0; j < 4; j++)
 			{
