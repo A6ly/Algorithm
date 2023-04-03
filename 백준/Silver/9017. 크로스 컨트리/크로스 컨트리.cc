@@ -4,6 +4,7 @@
 
 using namespace std;
 
+const int MAX = 201;
 int T, N;
 
 int main()
@@ -17,7 +18,7 @@ int main()
 	{
 		int minVal = INT32_MAX, result = 0;
 		vector<int> vec;
-		vector<vector<int>> vec2(201);
+		vector<vector<int>> vec2(MAX);
 
 		cin >> N;
 
@@ -43,7 +44,7 @@ int main()
 			vec2[vec[i]].push_back(i + 1);
 		}
 
-		for (int i = 1; i <= 200; i++)
+		for (int i = 1; i < MAX; i++)
 		{
 			int sum = 0;
 
