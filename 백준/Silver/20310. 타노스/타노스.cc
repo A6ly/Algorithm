@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string s, result;
+string s;
 
 int main()
 {
@@ -12,20 +12,33 @@ int main()
 
 	cin >> s;
 
+	int length = s.length();
 	int zeroHalfCount = count(s.begin(), s.end(), '0') / 2;
 	int oneHalfCount = count(s.begin(), s.end(), '1') / 2;
 
-	for (int i = 0; i < zeroHalfCount; i++)
+	for (int i = length - 1; i >= 0; i--)
 	{
-		result += '0';
+		if (s[i] == '0' && zeroHalfCount > 0)
+		{
+			s[i] = '2';
+
+			zeroHalfCount--;
+		}
 	}
 
-	for (int i = 0; i < oneHalfCount; i++)
+	for (int i = 0; i < length; i++)
 	{
-		result += '1';
+		if (s[i] == '1' && oneHalfCount > 0)
+		{
+			s[i] = '2';
+
+			oneHalfCount--;
+		}
 	}
 
-	cout << result;
+	s.erase(remove(s.begin(), s.end(), '2'), s.end());
+
+	cout << s;
 
 	return 0;
 }
